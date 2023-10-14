@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="./index.js"></script>
+    <link rel="shortcut icon" href="https://img.freepik.com/premium-photo/romantic-couple-valentines-day-amoled_878783-5198.jpg" type="image/x-icon">
+    <title>Love Calculator</title>
+</head>
+
+<body>
+    <section>
+        <form action="">
+            <p class="love"></p>
+            <input id="name1" type="text" placeholder="Your name">
+            <input id="name2" type="text" placeholder="Your Crush">
+            <input id="button" type="button" value="Calculate">
+        </form>
+    </section>
+
+    <script>
+        const button = document.getElementById("button");
+        const name1Input = document.querySelector("#name1");
+
+        name1Input.addEventListener("change", function () {
+            document.querySelector("p").style.background = "https://img.freepik.com/premium-photo/romantic-couple-valentines-day-amoled_878783-5198.jpg";
+            document.querySelector("p").style.backgroundSize = "cover";
+            document.querySelector("p").innerHTML = "";
+        });
+
+        button.addEventListener("click", function () {
+            if (name1Input.value.length === 0) {
+                alert("Please fill in the names");
+                return;
+            }
+            var loveScore = Math.random() * 100;
+            loveScore = Math.floor(loveScore) + 1;
+
+            document.querySelector("p").style.background = "#fff";
+            document.querySelector("p").innerHTML = loveScore + "%";
+        });
+    </script>
+</body>
+
+</html>
